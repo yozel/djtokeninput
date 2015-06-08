@@ -11,13 +11,14 @@ def _tokens(query_set, keys=("id", "name")):
     lambda v: dict(zip(keys, v)),
     query_set.values_list(*keys))
 
-def search(req, app_label, model):
+def search(req, app_label, model, search_method):
   content_type = get_object_or_404(ContentType, app_label=app_label, model=model)
   model = content_type.model_class()
 
-  if hasattr(model, "search"):
+  if hasattr(model, search_method):
     if "q" in req.GET:
-      query_set = model.search(req.GET["q"])
+      search = getattr(model, search_method)
+      query_set = search(req.GET["q"])
       tokens = _tokens(query_set)
 
     else:

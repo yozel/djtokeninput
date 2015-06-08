@@ -10,7 +10,7 @@ class Tag(models.Model):
     return self.name
 
   @classmethod
-  def search(cls, query):
+  def search_for_foo(cls, query):
     return cls.objects.filter(name__icontains=query)
 
 

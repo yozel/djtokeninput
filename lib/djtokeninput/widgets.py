@@ -48,7 +48,7 @@ class TokenWidget(forms.TextInput):
     settings = copy.copy(self.settings)
 
     url_name = getattr(self, "search_url", "djtokeninput_search")
-    url_args = (self.model._meta.app_label, self.model._meta.object_name.lower())
+    url_args = (self.model._meta.app_label, self.model._meta.object_name.lower(), self.search_method)
     attrs["data-search-url"] = reverse(url_name, args=url_args)
 
     attrs["class"] = self._class_name(

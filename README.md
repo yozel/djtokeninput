@@ -32,7 +32,7 @@ urlpatterns = patterns("",
 )
 ```
 
-Add a `search` method to your model:
+Add a search method to your model:
 
 ```python
 from django.db import models
@@ -41,7 +41,7 @@ class Tag(models.Model):
   name = models.CharField(max_length=100)
 
   @classmethod
-  def search(cls, query):
+  def search_for_foo(cls, query):
     return cls.objects.filter(name__icontains=query)
 ```
 
@@ -54,7 +54,7 @@ from djtokeninput import TokenField
 class ExampleForm(forms.Form):
   title = forms.CharField()
   desc = forms.CharField(widget=forms.Textarea)
-  tags = TokenField(models.Tag, required=False)
+  tags = TokenField(models.Tag, search_method='search_for_foo', required=False)
 ```
 
 Finally, add the JS and CSS assets to your template:
