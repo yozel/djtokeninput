@@ -8,21 +8,21 @@ PROJECT_NAME = os.path.basename(PROJECT_ROOT)
 
 
 DATABASES = {
-  "default": {
-    "ENGINE": "django.db.backends.sqlite3",
-    "NAME": "%s/db.sqlite3" % PROJECT_ROOT
-  }
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": "%s/db.sqlite3" % PROJECT_ROOT
+    }
 }
 
 INSTALLED_APPS = (
-  "django.contrib.contenttypes",
-  "django.contrib.staticfiles",
-  "djtokeninput",
-  "app"
+    "django.contrib.contenttypes",
+    "django.contrib.staticfiles",
+    "djtokeninput",
+    "app"
 )
 
 STATICFILES_FINDERS = (
-  "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 )
 
 ROOT_URLCONF = "example.urls"
