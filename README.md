@@ -10,7 +10,7 @@ Quick Start
 I haven't packaged this yet, so install it via GitHub for now:
 
 ```bash
-$ pip install -e git://github.com/adammck/djtokeninput.git#egg=djtokeninput
+$ pip install -e git://github.com/yozel/djtokeninput.git#egg=djtokeninput
 ```
 
 Add it to your `INSTALLED_APPS`:
