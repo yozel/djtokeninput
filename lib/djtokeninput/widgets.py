@@ -10,7 +10,7 @@ from django.core.urlresolvers import reverse
 class TokenWidget(forms.TextInput):
     class Media:
         css = {
-            "all": ("css/token-input.css",)
+            "all": ("css/token-input.css","css/token-input-facebook.css")
         }
 
         js = (
